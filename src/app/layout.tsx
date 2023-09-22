@@ -2,6 +2,8 @@ import { MUIHeader } from '@/components/MUIHeader'
 import '../styles/globals.css'
 import { Inter } from 'next/font/google'
 import { Metadata } from 'next'
+import { MUIStyledBody } from '@/styles/global'
+import { ThemeProvider } from '@/styles/theme/ThemeProvider'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -17,10 +19,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt_BR">
-      <body className={inter.className}>
-        <MUIHeader />
-        {children}
-      </body>
+      <ThemeProvider>
+        <MUIStyledBody className={inter.className}>
+          <MUIHeader />
+          {children}
+        </MUIStyledBody>
+      </ThemeProvider>
     </html>
   )
 }
