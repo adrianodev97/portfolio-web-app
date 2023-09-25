@@ -46,7 +46,7 @@ export const palette = {
     paper: '#000000',
   },
   text: {
-    primary: '#FFFFFF',
-    secondary: '#CBCBCB',
+    primary: '#CBCBCB',
+    secondary: '#8C8A97',
   },
 }
