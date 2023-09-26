@@ -1,6 +1,6 @@
 'use client'
 
-import { styled, Toolbar, IconButton, Typography } from '@mui/material'
+import { styled, Toolbar, IconButton, Typography, Box } from '@mui/material'
 
 export const MUIStyledToolbar = styled(Toolbar)(() => ({
   display: 'flex',
@@ -9,12 +9,19 @@ export const MUIStyledToolbar = styled(Toolbar)(() => ({
 }))
 
 export const MUIStyledLogo = styled(Typography)(({ theme }) => ({
-  display: 'flex',
-  gap: '.3rem',
-  color: theme.palette.text.primary,
-  fontSize: theme.typography.body1.fontSize,
-  fontWeight: theme.typography.body1.fontWeight,
-  lineHeight: theme.typography.body1.lineHeight,
+  a: {
+    display: 'flex',
+    gap: '.3rem',
+    color: theme.palette.text.primary,
+    fontSize: theme.typography.body1.fontSize,
+    fontWeight: theme.typography.body1.fontWeight,
+    lineHeight: theme.typography.body1.lineHeight,
+  },
+  [theme.breakpoints.down('md')]: {
+    flexGrow: 1,
+    display: 'flex',
+    justifyContent: 'center',
+  },
 }))
 
 export const MUIStyledLogoText = styled('span')(({ theme }) => ({
@@ -30,6 +37,12 @@ export const MUIStyledList = styled('ul')(() => ({
   display: 'flex',
   gap: '2rem',
   justifyContent: 'center',
+}))
+
+export const MUIStyledSocialMediasContent = styled(Box)(({ theme }) => ({
+  [theme.breakpoints.down('md')]: {
+    display: 'none',
+  },
 }))
 
 export const MUIStyledIconButton = styled(IconButton)(() => ({}))
