@@ -2,8 +2,11 @@
 
 import { styled, Typography } from '@mui/material'
 
-export const MUIStyledNav = styled('nav')(() => ({
+export const MUIStyledNav = styled('nav')(({ theme }) => ({
   flexGrow: 1,
+  [theme.breakpoints.down('md')]: {
+    display: 'none',
+  },
 }))
 
 export const MUIStyledList = styled('ul')(() => ({

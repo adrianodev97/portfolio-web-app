@@ -4,17 +4,10 @@ import { MUIStyledLink, MUIStyledList, MUIStyledNav } from './styles'
 import { Box } from '@mui/material'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
+import { INavProps } from './types'
 
-export const MUINav = () => {
+export const MUINav = ({ pages }: INavProps) => {
   const pathname = usePathname()
-
-  const pages = [
-    { title: 'Home', href: '/' },
-    { title: 'Portfolio', href: '/portfolio' },
-    { title: 'Serviços', href: '/servicos' },
-    { title: 'Sobre', href: '/sobre' },
-    { title: 'Contato', href: '/contato' },
-  ]
 
   return (
     <MUIStyledNav>
