@@ -7,8 +7,10 @@ export const MUIStyledBody = styled('body')(({ theme }) => ({
   color: theme.palette.text.primary,
 }))
 
-export const MUIStyledContainer = styled(Box)(() => ({
-  width: '90%',
-  maxWidth: '1200px',
+export const MUIStyledContainer = styled(Box)(({ theme }) => ({
+  width: '100%',
+  maxWidth: `calc(1200px + ${theme.spacing(4)})`,
   margin: '0 auto',
+  paddingLeft: theme.spacing(2),
+  paddingRight: theme.spacing(2),
 }))
