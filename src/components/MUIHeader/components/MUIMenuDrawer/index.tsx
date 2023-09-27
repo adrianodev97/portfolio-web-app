@@ -5,6 +5,9 @@ import {
   MUIMenuDrawerLogoContainer,
   MUIMenuDrawerContent,
   MUIStyledMenuDrawer,
+  MUIMenuDrawerLogo,
+  MUIStyledHeaderNavItem,
+  MUIStyledHeaderNavList,
 } from './styles'
 
 import MenuIcon from '@mui/icons-material/Menu'
@@ -12,6 +15,7 @@ import MenuIcon from '@mui/icons-material/Menu'
 import Link from 'next/link'
 import React, { useState } from 'react'
 import { IMenuDrawerProps } from './types'
+import { Typography } from '@mui/material'
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export const MUIMenuDrawer = ({ pages, socialMedias }: IMenuDrawerProps) => {
@@ -33,8 +37,18 @@ export const MUIMenuDrawer = ({ pages, socialMedias }: IMenuDrawerProps) => {
       >
         <MUIMenuDrawerContent>
           <MUIMenuDrawerLogoContainer>
-            <Link href="/" onClick={() => setOpen(!open)}></Link>
+            <Link href="/" onClick={() => setOpen(!open)}>
+              <MUIMenuDrawerLogo>{'<A/>'}</MUIMenuDrawerLogo>
+            </Link>
           </MUIMenuDrawerLogoContainer>
+
+          <MUIStyledHeaderNavList>
+            {pages.map((page, index) => (
+              <MUIStyledHeaderNavItem key={index}>
+                <Link href={page.href}>{page.title}</Link>
+              </MUIStyledHeaderNavItem>
+            ))}
+          </MUIStyledHeaderNavList>
         </MUIMenuDrawerContent>
       </MUIStyledMenuDrawer>
     </>
