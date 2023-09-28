@@ -4,10 +4,10 @@ import MailOutlineIcon from '@mui/icons-material/MailOutline'
 
 export const pages = [
   { title: 'Home', href: '/' },
-  { title: 'Portfolio', href: '/portfolio' },
-  { title: 'Serviços', href: '/servicos' },
-  { title: 'Sobre', href: '/sobre' },
-  { title: 'Contato', href: '/contato' },
+  { title: 'Projetos', href: '/projects' },
+  { title: 'Sobre', href: '/about' },
+  { title: 'Tutoriais', href: '/tutorials' },
+  { title: 'Contato', href: '/contact' },
 ]
 
 export const socialMedias = [

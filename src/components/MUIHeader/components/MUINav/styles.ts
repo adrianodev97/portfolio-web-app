@@ -1,13 +1,16 @@
 'use client'
 
+import { theme } from '@/styles/theme'
 import { styled, Typography } from '@mui/material'
 
-export const MUIStyledNav = styled('nav')(({ theme }) => ({
-  flexGrow: 1,
-  [theme.breakpoints.down('md')]: {
-    display: 'none',
-  },
-}))
+export const MUIStyledNav = styled('nav')<{ onMobile: boolean }>(
+  ({ theme, onMobile }) => ({
+    flexGrow: 1,
+    [theme.breakpoints.down('md')]: {
+      display: onMobile ? 'block' : 'none',
+    },
+  }),
+)
 
 export const MUIStyledList = styled('ul')(() => ({
   display: 'flex',
@@ -17,6 +20,16 @@ export const MUIStyledList = styled('ul')(() => ({
   li: {
     minWidth: '85px',
     textAlign: 'center',
+  },
+
+  [theme.breakpoints.down('md')]: {
+    flexDirection: 'column',
+    gap: theme.spacing(3),
+    paddingTop: theme.spacing(6),
+    li: {
+      width: '100%',
+      minWidth: '100%',
+    },
   },
 }))
 
@@ -30,6 +43,10 @@ export const MUIStyledLink = styled(Typography)<{ isActive: boolean }>(
       color: isActive
         ? theme.palette.primary.main
         : theme.palette.text.secondary,
+    },
+    [theme.breakpoints.down('md')]: {
+      fontSize: theme.typography.h5.fontSize,
+      lineHeight: theme.typography.h5.lineHeight,
     },
   }),
 )

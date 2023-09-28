@@ -6,20 +6,26 @@ import {
   MUIMenuDrawerContent,
   MUIStyledMenuDrawer,
   MUIMenuDrawerLogo,
-  MUIStyledHeaderNavItem,
-  MUIStyledHeaderNavList,
 } from './styles'
 
 import MenuIcon from '@mui/icons-material/Menu'
 
 import Link from 'next/link'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { IMenuDrawerProps } from './types'
-import { Typography } from '@mui/material'
+import { MUINav } from '../MUINav'
+import { usePathname } from 'next/navigation'
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export const MUIMenuDrawer = ({ pages, socialMedias }: IMenuDrawerProps) => {
   const [open, setOpen] = useState<boolean>(false)
+
+  const pathname = usePathname()
+
+  useEffect(() => {
+    setOpen(false)
+  }, [pathname])
+
   return (
     <>
       <MUIStyledMenuMobileButton
@@ -42,13 +48,7 @@ export const MUIMenuDrawer = ({ pages, socialMedias }: IMenuDrawerProps) => {
             </Link>
           </MUIMenuDrawerLogoContainer>
 
-          <MUIStyledHeaderNavList>
-            {pages.map((page, index) => (
-              <MUIStyledHeaderNavItem key={index}>
-                <Link href={page.href}>{page.title}</Link>
-              </MUIStyledHeaderNavItem>
-            ))}
-          </MUIStyledHeaderNavList>
+          <MUINav pages={pages} onMobile={true} />
         </MUIMenuDrawerContent>
       </MUIStyledMenuDrawer>
     </>

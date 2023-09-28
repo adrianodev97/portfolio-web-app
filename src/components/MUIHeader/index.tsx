@@ -28,7 +28,7 @@ export const MUIHeader = () => {
               </Link>
             </MUIStyledLogo>
 
-            <MUINav pages={pages} />
+            <MUINav pages={pages} onMobile={false} />
 
             <MUIStyledSocialMediasContent>
               {socialMedias.map((social, index) => (

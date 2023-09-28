@@ -1,5 +1,6 @@
 'use client'
 
+import { theme } from '@/styles/theme'
 import {
   styled,
   IconButton,
@@ -17,16 +18,16 @@ export const MUIStyledMenuMobileButton = styled(IconButton)(({ theme }) => ({
 
 export const MUIStyledMenuDrawer = styled(Drawer)(({ theme }) => ({
   '& .MuiDrawer-paperAnchorRight': {
-    backgroundColor: alpha(theme.palette.background.default, 0.15),
+    backgroundColor: alpha(theme.palette.background.default, 0.7),
     backdropFilter: 'blur(10px)',
   },
 }))
 
 export const MUIMenuDrawerContent = styled(Box)(() => ({
-  padding: '1rem 2rem',
+  padding: '2rem',
   position: 'relative',
   width: '80vw',
-  maxWidth: '300px',
+  maxWidth: '400px',
 }))
 
 export const MUIMenuDrawerLogoContainer = styled(Box)(() => ({
@@ -39,21 +40,6 @@ export const MUIMenuDrawerLogo = styled(Typography)(({ theme }) => ({
   fontSize: theme.typography.h4.fontSize,
   fontWeight: theme.typography.h4.fontWeight,
   lineHeight: theme.typography.h4.lineHeight,
-}))
-
-export const MUIStyledHeaderNavList = styled('ul')(({ theme }) => ({
-  flexDirection: 'column',
-  alignItems: 'start',
-  width: 'fit-content',
-  margin: '0 auto',
-  padding: theme.spacing(6),
-}))
-
-export const MUIStyledHeaderNavItem = styled('li')(() => ({
-  a: {
-    position: 'relative',
-    textDecoration: 'none',
-  },
 }))
 
 export const MUIStyledHeaderSocialContent = styled('div')<{

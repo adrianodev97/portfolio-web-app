@@ -6,11 +6,11 @@ import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import { INavProps } from './types'
 
-export const MUINav = ({ pages }: INavProps) => {
+export const MUINav = ({ pages, onMobile }: INavProps) => {
   const pathname = usePathname()
 
   return (
-    <MUIStyledNav>
+    <MUIStyledNav onMobile={onMobile}>
       <MUIStyledList>
         {pages.map((page, index) => (
           <Box key={index} component="li">
