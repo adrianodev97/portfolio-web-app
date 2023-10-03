@@ -18,7 +18,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="pt_BR">
+    <html lang="pt-br">
       <ThemeProvider>
         <MUIStyledBody className={nunito.className}>
           <MUIHeader />
