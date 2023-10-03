@@ -34,3 +34,16 @@ ol {
   list-style-type: none;
   padding: 0;
 }
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #11f8d6;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
