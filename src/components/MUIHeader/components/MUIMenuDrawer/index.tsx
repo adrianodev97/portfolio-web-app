@@ -49,6 +49,7 @@ export const MUIMenuDrawer = ({ pages, socialMedias }: IMenuDrawerProps) => {
           </MUIMenuDrawerLogoContainer>
 
           <MUINav pages={pages} onMobile={true} />
+          {/* <MUISocialMedias /> */}
         </MUIMenuDrawerContent>
       </MUIStyledMenuDrawer>
     </>
