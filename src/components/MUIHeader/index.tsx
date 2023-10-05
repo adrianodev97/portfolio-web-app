@@ -1,19 +1,14 @@
-import {
-  MUIStyledToolbar,
-  MUIStyledIconButton,
-  MUIStyledLogoText,
-  MUIStyledLogo,
-  MUIStyledSocialMediasContent,
-} from './styles'
+import { MUIStyledToolbar, MUIStyledLogoText, MUIStyledLogo } from './styles'
 
 import { MUIStyledContainer } from '@/styles/global'
 import { AppBar, Box } from '@mui/material'
 import { MUINav } from './components/MUINav'
 import Link from 'next/link'
-import React from 'react'
+
 import { MUIMenuDrawer } from './components/MUIMenuDrawer'
 
 import { pages, socialMedias } from './mocks'
+import { MUISocialMedias } from './components/MUISocialMedias'
 
 export const MUIHeader = () => {
   return (
@@ -28,21 +23,9 @@ export const MUIHeader = () => {
               </Link>
             </MUIStyledLogo>
 
-            <MUINav pages={pages} onMobile={false} />
+            <MUINav pages={pages} />
 
-            <MUIStyledSocialMediasContent>
-              {socialMedias.map((social, index) => (
-                <Link href={social.href} key={index} target="_blank">
-                  <MUIStyledIconButton
-                    size="medium"
-                    color="primary"
-                    aria-label="menu"
-                  >
-                    {React.createElement(social.icon)}
-                  </MUIStyledIconButton>
-                </Link>
-              ))}
-            </MUIStyledSocialMediasContent>
+            <MUISocialMedias socialMedias={socialMedias} />
 
             <MUIMenuDrawer pages={pages} socialMedias={socialMedias} />
           </MUIStyledToolbar>

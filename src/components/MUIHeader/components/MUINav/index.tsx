@@ -10,7 +10,7 @@ export const MUINav = ({ pages, onMobile }: INavProps) => {
   const pathname = usePathname()
 
   return (
-    <MUIStyledNav onMobile={onMobile}>
+    <MUIStyledNav onMobile={onMobile || false}>
       <MUIStyledList>
         {pages.map((page, index) => (
           <Box key={index} component="li">

@@ -1,6 +1,6 @@
 'use client'
 
-import { styled, Toolbar, IconButton, Typography, Box } from '@mui/material'
+import { styled, Toolbar, Typography } from '@mui/material'
 
 export const MUIStyledToolbar = styled(Toolbar)(() => ({
   display: 'flex',
@@ -38,11 +38,3 @@ export const MUIStyledList = styled('ul')(() => ({
   gap: '2rem',
   justifyContent: 'center',
 }))
-
-export const MUIStyledSocialMediasContent = styled(Box)(({ theme }) => ({
-  [theme.breakpoints.down('md')]: {
-    display: 'none',
-  },
-}))
-
-export const MUIStyledIconButton = styled(IconButton)(() => ({}))

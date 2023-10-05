@@ -15,8 +15,8 @@ import React, { useEffect, useState } from 'react'
 import { IMenuDrawerProps } from './types'
 import { MUINav } from '../MUINav'
 import { usePathname } from 'next/navigation'
+import { MUISocialMedias } from '../MUISocialMedias'
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export const MUIMenuDrawer = ({ pages, socialMedias }: IMenuDrawerProps) => {
   const [open, setOpen] = useState<boolean>(false)
 
@@ -49,7 +49,8 @@ export const MUIMenuDrawer = ({ pages, socialMedias }: IMenuDrawerProps) => {
           </MUIMenuDrawerLogoContainer>
 
           <MUINav pages={pages} onMobile={true} />
-          {/* <MUISocialMedias /> */}
+
+          <MUISocialMedias socialMedias={socialMedias} onMobile={true} />
         </MUIMenuDrawerContent>
       </MUIStyledMenuDrawer>
     </>
