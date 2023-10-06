@@ -1,26 +1,37 @@
-import {
-  MUIStyledAppBar,
-  MUIStyledToolbar,
-  MUIStyledButton,
-  MUIStyledIconButton,
-} from './styles'
-import MenuIcon from '@mui/icons-material/Menu'
+import { MUIStyledToolbar, MUIStyledLogoText, MUIStyledLogo } from './styles'
+
+import { MUIStyledContainer } from '@/styles/global'
+import { AppBar, Box } from '@mui/material'
+import { MUINav } from './components/MUINav'
+import Link from 'next/link'
+
+import { MUIMenuDrawer } from './components/MUIMenuDrawer'
+
+import { pages, socialMedias } from './mocks'
+import { MUISocialMedias } from './components/MUISocialMedias'
 
 export const MUIHeader = () => {
   return (
-    <MUIStyledAppBar position="static">
-      <MUIStyledToolbar>
-        <MUIStyledIconButton
-          size="large"
-          edge="start"
-          color="info"
-          aria-label="menu"
-        >
-          <MenuIcon />
-        </MUIStyledIconButton>
+    <>
+      <AppBar position="fixed">
+        <MUIStyledContainer>
+          <MUIStyledToolbar>
+            <MUIStyledLogo>
+              <Link href={'/'}>
+                <MUIStyledLogoText>{`<A/>`}</MUIStyledLogoText>
+                Adriano Nascimento
+              </Link>
+            </MUIStyledLogo>
 
-        <MUIStyledButton variant="contained">Login</MUIStyledButton>
-      </MUIStyledToolbar>
-    </MUIStyledAppBar>
+            <MUINav pages={pages} />
+
+            <MUISocialMedias socialMedias={socialMedias} />
+
+            <MUIMenuDrawer pages={pages} socialMedias={socialMedias} />
+          </MUIStyledToolbar>
+        </MUIStyledContainer>
+      </AppBar>
+      <Box sx={{ width: '100%', height: '80px' }} />
+    </>
   )
 }

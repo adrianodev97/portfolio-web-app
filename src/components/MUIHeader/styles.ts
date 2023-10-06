@@ -1,23 +1,40 @@
 'use client'
 
-import {
-  styled,
-  AppBar,
-  Toolbar,
-  Typography,
-  Button,
-  IconButton,
-} from '@mui/material'
+import { styled, Toolbar, Typography } from '@mui/material'
 
-export const MUIStyledAppBar = styled(AppBar)(() => ({}))
-
-export const MUIStyledToolbar = styled(Toolbar)(() => ({}))
-
-// remove display none in dashboard route
-export const MUIStyledIconButton = styled(IconButton)(() => ({
-  display: 'none',
+export const MUIStyledToolbar = styled(Toolbar)(() => ({
+  display: 'flex',
+  justifyContent: 'space-between',
+  padding: '0 !important',
 }))
 
-export const MUIStyledTypography = styled(Typography)(() => ({}))
+export const MUIStyledLogo = styled(Typography)(({ theme }) => ({
+  a: {
+    display: 'flex',
+    gap: '.3rem',
+    color: theme.palette.text.primary,
+    fontSize: theme.typography.body1.fontSize,
+    fontWeight: theme.typography.body1.fontWeight,
+    lineHeight: theme.typography.body1.lineHeight,
+  },
+  [theme.breakpoints.down('md')]: {
+    flexGrow: 1,
+    display: 'flex',
+    justifyContent: 'center',
+  },
+}))
 
-export const MUIStyledButton = styled(Button)(() => ({}))
+export const MUIStyledLogoText = styled('span')(({ theme }) => ({
+  color: theme.palette.primary.main,
+  fontWeight: 600,
+}))
+
+export const MUIStyledNav = styled('nav')(() => ({
+  flexGrow: 1,
+}))
+
+export const MUIStyledList = styled('ul')(() => ({
+  display: 'flex',
+  gap: '2rem',
+  justifyContent: 'center',
+}))
