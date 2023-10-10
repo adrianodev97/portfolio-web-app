@@ -72,6 +72,15 @@ export const theme = createTheme({
       lineHeight: '20px',
     },
   },
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 600,
+      md: 900,
+      lg: 1200,
+      xl: 1536,
+    },
+  },
   components: {
     MuiAppBar: {
       styleOverrides: {
